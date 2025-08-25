@@ -9,14 +9,23 @@ import {
     Image,
     Alert,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../App"; // 👈 важно, импортируй типы из App.tsx
 
 type LoginScreenProps = {
     setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+    
 };
+
+// Определяем тип для навигации
+type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, "Login">;
 
 export default function LoginScreen({ setIsLoggedIn }: LoginScreenProps) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigation = useNavigation<LoginScreenNavigationProp>(); // ✅ теперь доступен navigation
 
     const handleLogin = () => {
         if (username.trim() === "") {
@@ -66,8 +75,12 @@ export default function LoginScreen({ setIsLoggedIn }: LoginScreenProps) {
 
                 {/* Ссылки */}
                 <View style={styles.links}>
-                    <Text style={styles.linkText}>Забыли пароль </Text>
-                    <Text style={styles.linkText}>Зарегистрироваться </Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
+                        <Text style={styles.linkText}>Забыли пароль? </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+                        <Text style={styles.linkText}>Зарегистрироваться </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -107,7 +120,6 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         marginBottom: 30,
         color: "#000",
-        
     },
     form: {
         flex: 1,
