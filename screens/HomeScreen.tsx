@@ -8,7 +8,7 @@ import {
     Image,
 } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../App"; // Импортируем типы из App.tsx
+import { RootStackParamList } from "../App"; 
 
 type HomeScreenNavigationProp = StackNavigationProp<
     RootStackParamList,

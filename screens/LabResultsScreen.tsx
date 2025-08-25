@@ -1,4 +1,4 @@
-// LabResultsScreen.tsx
+
 import React from "react";
 import {
     View,
@@ -59,7 +59,7 @@ function ResultCard({ title, date, status, onPress }: ResultCardProps) {
                     <Text style={styles.resultName}>{title}</Text>
                     <Text style={styles.resultDate}>{date}</Text>
                 </View>
-                {/* Объединяем value + arrow в один блок */}
+                
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Text style={styles.value}>{status}</Text>
                     <Text style={styles.arrow}>›</Text>
