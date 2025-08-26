@@ -11,21 +11,21 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../App"; // 👈 важно, импортируй типы из App.tsx
+import { RootStackParamList } from "../App"; 
 
 type LoginScreenProps = {
     setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
     
 };
 
-// Определяем тип для навигации
+
 type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, "Login">;
 
 export default function LoginScreen({ setIsLoggedIn }: LoginScreenProps) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const navigation = useNavigation<LoginScreenNavigationProp>(); // ✅ теперь доступен navigation
+    const navigation = useNavigation<LoginScreenNavigationProp>(); 
 
     const handleLogin = () => {
         if (username.trim() === "") {
@@ -41,7 +41,7 @@ export default function LoginScreen({ setIsLoggedIn }: LoginScreenProps) {
 
     return (
         <View style={styles.container}>
-            {/* Шапка */}
+           
             <View style={styles.header}>
                 <Image source={require("../assets/media.png")} style={styles.logo} />
                 <View>
@@ -50,10 +50,10 @@ export default function LoginScreen({ setIsLoggedIn }: LoginScreenProps) {
                 </View>
             </View>
 
-            {/* Заголовок */}
+            
             <Text style={styles.title}>Войти</Text>
 
-            {/* Основная часть (форма) */}
+            
             <View style={styles.form}>
                 <TextInput
                     style={styles.input}
@@ -73,7 +73,7 @@ export default function LoginScreen({ setIsLoggedIn }: LoginScreenProps) {
                     <Text style={styles.buttonText}>Войти</Text>
                 </TouchableOpacity>
 
-                {/* Ссылки */}
+                
                 <View style={styles.links}>
                     <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
                         <Text style={styles.linkText}>Забыли пароль? </Text>

@@ -1,4 +1,4 @@
-// ResultsScreen.tsx
+
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from "react-native";
 import { LineChart } from "react-native-chart-kit";
@@ -7,7 +7,7 @@ import { Dimensions } from "react-native";
 
 const screenWidth = Dimensions.get("window").width;
 
-// ====== Header ======
+
 function Header() {
     return (
         <View style={styles.topBar}>
@@ -23,7 +23,7 @@ function Header() {
     );
 }
 
-// ====== Bottom Nav ======
+
 function BottomNav() {
     return (
         <View style={styles.bottomNav}>
@@ -55,7 +55,7 @@ function BottomNav() {
     );
 }
 
-// ====== Result Item ======
+
 function ResultItem({ date, value }: { date: string; value: string }) {
     return (
         <View style={styles.resultItem}>
@@ -65,7 +65,7 @@ function ResultItem({ date, value }: { date: string; value: string }) {
     );
 }
 
-// ====== Main Screen ======
+
 export default function ResultsScreen() {
     const results = [
         { date: "01 янв 2025    ", value: "120" },
@@ -83,7 +83,7 @@ export default function ResultsScreen() {
             <Header />
 
             <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
-                {/* ===== График ===== */}
+                
                 <View style={styles.chartContainer}>
                     <Text style={styles.chartTitle}>Динамика анализов</Text>
 
@@ -93,7 +93,7 @@ export default function ResultsScreen() {
                                 labels: results.map((r) => r.date),
                                 datasets: [{ data: results.map((r) => Number(r.value)) }],
                             }}
-                            width={results.length * 100} // ширина зависит от количества точек
+                            width={results.length * 100} 
                             height={220}
                             chartConfig={{
                                 backgroundColor: "#ffffff",
@@ -111,7 +111,7 @@ export default function ResultsScreen() {
                 </View>
 
 
-                {/* ===== Список по датам ===== */}
+                
                 <View style={styles.resultsList}>
                     <Text style={styles.listTitle}>Результаты по датам</Text>
                     {results.map((item, index) => (
@@ -125,7 +125,7 @@ export default function ResultsScreen() {
     );
 }
 
-// ====== Styles ======
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     chartTitle: { fontSize: 18, fontWeight: "700", marginBottom: 10 },
     chart: { borderRadius: 10 },
 
-    // Results list
+    
     resultsList: {
         backgroundColor: "#fff",
         borderRadius: 20,

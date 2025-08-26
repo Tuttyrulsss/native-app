@@ -12,10 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../App";
 
-// Типизация навигации
 type NavigationProp = StackNavigationProp<RootStackParamList, "LabResults">;
 
-// Общий Header
 function Header() {
     return (
         <View style={styles.topBar}>
@@ -32,7 +30,6 @@ function Header() {
     );
 }
 
-// Профиль пациента
 function PatientProfile() {
     return (
         <View style={styles.patientProfile}>
@@ -50,7 +47,7 @@ interface ResultCardProps {
     onPress?: () => void;
 }
 
-// Карточка результата
+
 function ResultCard({ title, date, status, onPress }: ResultCardProps) {
     return (
         <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
@@ -157,7 +154,7 @@ const styles = StyleSheet.create({
         paddingTop: 50,
         alignItems: "center",
     },
-    // Header
+    
     topBar: {
         flexDirection: "row",
         alignItems: "center",
@@ -180,7 +177,7 @@ const styles = StyleSheet.create({
 
     scrollContainer: { width: "90%" },
 
-    // Профиль пациента
+    
     patientProfile: {
         paddingVertical: 5,
         alignItems: "flex-start",
@@ -189,7 +186,7 @@ const styles = StyleSheet.create({
     patientName: { fontSize: 24, fontWeight: "700", color: "#000" },
     patientInfo: { fontSize: 18, fontWeight: "400", color: "#000", marginTop: 2 },
 
-    // Панель результатов
+    
     resultPanel: {
         backgroundColor: "#fff",
         borderRadius: 20,
@@ -198,7 +195,7 @@ const styles = StyleSheet.create({
     },
     resultTitle: { fontSize: 18, fontWeight: "700", marginBottom: 10 },
 
-    // Карточка результата
+ 
     resultCard: {
         flexDirection: "row",
         alignItems: "center",
@@ -220,11 +217,11 @@ const styles = StyleSheet.create({
     value: {
         fontSize: 20,
         fontWeight: "600",
-        color: "#000", // обычный чёрный
+        color: "#000", 
         marginRight: 8,
     },
 
-    // BottomNav
+    
     bottomNav: {
         flexDirection: "row",
         justifyContent: "space-around",

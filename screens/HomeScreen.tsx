@@ -238,8 +238,6 @@ const styles = StyleSheet.create({
         fontWeight: "500",
         color: "#000",
     },
-
-    // --- нижняя навигация ---
     bottomNav: {
         flexDirection: "row",
         justifyContent: "space-around",

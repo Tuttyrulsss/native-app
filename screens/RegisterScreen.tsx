@@ -1,4 +1,4 @@
-// screens/RegisterScreen.tsx
+
 import React, { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
 import DropDownPicker from "react-native-dropdown-picker";
@@ -67,7 +67,7 @@ export default function RegisterScreen({ navigation }: any) {
                 contentContainerStyle={{ paddingBottom: 100 }}
                 keyboardShouldPersistTaps="handled"
             >
-                {/* Заголовок */}
+                
                 <View style={styles.header}>
                     <Text style={styles.title}>Регистрация</Text>
                     <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -75,7 +75,7 @@ export default function RegisterScreen({ navigation }: any) {
                     </TouchableOpacity>
                 </View>
 
-                {/* Поля */}
+              
                 <Text style={styles.label}>* Логин</Text>
                 <TextInput
                     style={styles.input}

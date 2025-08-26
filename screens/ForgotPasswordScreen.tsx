@@ -22,13 +22,12 @@ export default function ForgotPasswordScreen({ navigation }: any) {
         >
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.container}>
-                    {/* Скроллим только контент */}
+                    
                     <ScrollView
                         style={{ flex: 1 }}
                         contentContainerStyle={{ flexGrow: 1, justifyContent: "space-between", paddingTop: 40, }}
                         keyboardShouldPersistTaps="handled"
                     >
-                        {/* Верхняя часть */}
                         <View style={styles.card}>
                             <Text style={styles.title}>Восстановление пароля</Text>
                             <Text style={styles.subtitle}>
@@ -55,7 +54,7 @@ export default function ForgotPasswordScreen({ navigation }: any) {
                             </TouchableOpacity>
                         </View>
 
-                        {/* Средняя часть (QR + ЭЦП) */}
+                      
                         <View style={styles.middle}>
                             <View style={styles.placeholder}>
                                 <Text style={styles.placeholderText}>QR </Text>
@@ -65,7 +64,7 @@ export default function ForgotPasswordScreen({ navigation }: any) {
                             </View>
                         </View>
 
-                        {/* Футер (самый низ) */}
+                        
                         <View style={styles.footer}>
                             <View style={styles.footer}>
                                 <Text style={styles.footerText}>Настоящему соглашению пользователь обязуется соблюдать меры по защите персональных данных и врачебной тайны.</Text>

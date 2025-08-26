@@ -8,12 +8,12 @@ import HomeScreen from "./screens/HomeScreen";
 import AllergiesScreen from "./screens/AllergiesScreen";
 import LabResultsScreen from "./screens/LabResultsScreen";
 import ResultsScreen from "./screens/ResultsScreen";
-import ForgotPasswordScreen from "./screens/ForgotPasswordScreen"; // ✅ новый импорт
+import ForgotPasswordScreen from "./screens/ForgotPasswordScreen"; 
 
 export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
-  ForgotPassword: undefined; // ✅ новый экран
+  ForgotPassword: undefined; 
   Home: undefined;
   Allergies: undefined;
   LabResults: undefined;
@@ -33,10 +33,9 @@ export default function App() {
             <Stack.Screen name="Login">
               {(props) => <LoginScreen {...props} setIsLoggedIn={setIsLoggedIn} />}
             </Stack.Screen>
-
             <Stack.Screen name="Register" component={RegisterScreen} />
             <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-            {/* ✅ добавили новый экран */}
+            
           </>
         ) : (
           <>
